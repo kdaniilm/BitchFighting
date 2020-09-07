@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitchFighting", "BitchFighting\BitchFighting.csproj", "{2DDE28B5-F998-4CB1-8F13-DE0B0412A125}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DDE28B5-F998-4CB1-8F13-DE0B0412A125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDE28B5-F998-4CB1-8F13-DE0B0412A125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDE28B5-F998-4CB1-8F13-DE0B0412A125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDE28B5-F998-4CB1-8F13-DE0B0412A125}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F523D9E-F22B-4A3B-A766-C3C9DEB5DD2E}
+	EndGlobalSection
+EndGlobal

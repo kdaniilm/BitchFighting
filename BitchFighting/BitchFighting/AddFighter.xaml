@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BitchFighting"
         mc:Ignorable="d"
-        Title="AddFighter" Height="450" Width="800">
+        Title="AddFighter" Height="500" Width="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Name:" FontSize="30" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Description:" FontSize="30" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="HP:" FontSize="30" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Defense:" FontSize="30" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="Attack:" FontSize="30" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+        <TextBlock Grid.Column="0" Grid.Row="5" Text="ImageUrl:" FontSize="30" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+        <TextBox Name="NameTb" Grid.Column="1" Grid.Row="0" Margin="0 2 10 2"/>
+        <TextBox Name="DescriptionTb" Grid.Column="1" Grid.Row="1" Margin="0 2 10 2"/>
+        <TextBox Name="HPTb" Grid.Column="1" Grid.Row="2" Margin="0 2 10 2" PreviewKeyDown="PreviewKeyDown" MaxLength="5"/>
+        <TextBox Name="DefenceTb" Grid.Column="1" Grid.Row="3" Margin="0 2 10 2" PreviewKeyDown="PreviewKeyDown" MaxLength="3"/>
+        <TextBox Name="AttackTb" Grid.Column="1" Grid.Row="4" Margin="0 2 10 2" PreviewKeyDown="PreviewKeyDown" MaxLength="4"/>
+        <TextBox Name="ImageUrlTb" Grid.Column="1" Grid.Row="5" Margin="0 2 10 2"/>
+
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Margin="10 5" Content="Add" FontSize="20" Click="Button_Click"/>
     </Grid>
 </Window>

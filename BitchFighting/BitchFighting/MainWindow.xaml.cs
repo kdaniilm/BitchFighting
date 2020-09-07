@@ -24,5 +24,24 @@ namespace BitchFighting
         {
             InitializeComponent();
         }
+
+        private void AddPersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new AddFighter().Show();
+        }
+
+        private void Player1Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+            Player1Btn.IsEnabled = false;
+            Player2Btn.IsEnabled = true;
+        }
+
+        private void Player2Btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new FightWindow().Show();
+        }
     }
 }

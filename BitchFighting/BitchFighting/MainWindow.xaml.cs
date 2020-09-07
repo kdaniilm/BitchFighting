@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BitchFighting.viewmodel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,22 @@ namespace BitchFighting
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowViewModel viewModel;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            viewModel = new MainWindowViewModel();
+            DataContext = viewModel;
+
+         
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            viewModel.GetHeroes().ForEach(x => testList.Items.Add(x.Name));
         }
     }
 }

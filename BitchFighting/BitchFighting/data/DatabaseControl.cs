@@ -37,9 +37,9 @@ namespace BitchFighting.data
             return todo;
         }
 
-        public async void Set(List<Hero> heroes)
+        public void Set(List<Hero> heroes)
         {
-            await _client.SetAsync("heroes", heroes);
+             _client.Set("heroes", heroes);
         }
 
         public static DatabaseControl getInstance()

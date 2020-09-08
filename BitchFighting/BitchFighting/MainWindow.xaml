@@ -3,13 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BitchFighting"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:BitchFighting" xmlns:controls="clr-namespace:BitchFighting.controls"
         mc:Ignorable="d"
-        Title="Bitch fight" Height="400" Width="500">
+        Title="Bitch fight" Height="630" Width="900" MinHeight="630" MinWidth="700" Background="#1b1c20" Loaded="Window_Loaded">
     <Grid>
-        <Button Name="AddPersBtn" Margin="432,10,10,309" Width="50" Height="50" Content="+" FontSize="20" VerticalContentAlignment="Center" Click="AddPersBtn_Click"/>
-        <WrapPanel Margin="10 80 10 80" Name="FighterWP"></WrapPanel>
-        <Button Name="Player1Btn" Width="200" Height="50" Margin="10,309,282,10" Content="Player 1" FontSize="20" Click="Player1Btn_Click"/>
-        <Button Name="Player2Btn" Width="200" Height="50" Margin="282,309,10,10" Content="Player 2" FontSize="20" Click="Player2Btn_Click" IsEnabled="False"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="80"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Button Name="AddPersBtn" Grid.Column="2" Width="50" Height="50" Content="+" FontSize="20" Background="#222328" Foreground="#fff" VerticalContentAlignment="Center" Click="AddPersBtn_Click"/>
+        <ScrollViewer Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden">
+            <WrapPanel x:Name="heroWrapPanel" >
+      
+            </WrapPanel>
+        </ScrollViewer>
+   
+        <Button Name="Player1Btn" Grid.Column="0" Grid.Row="2" Width="200" Height="50" Background="#222328" Foreground="#fff"  Content="Player 1" FontSize="20" Click="Player1Btn_Click"/>
+        <Button Name="Player2Btn" Grid.Column="1" Grid.Row="2" Width="200" Height="50" IsEnabled="False" Background="#222328" Foreground="#fff" Content="Player 2" FontSize="20" Click="Player1Btn_Click"/>
     </Grid>
 </Window>

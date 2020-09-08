@@ -1,4 +1,5 @@
-﻿using BitchFighting.viewmodel;
+﻿using BitchFighting.controls;
+using BitchFighting.viewmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,13 +37,14 @@ namespace BitchFighting
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //viewModel.GetHeroes().ForEach(x => testList.Items.Add(x.Name));
+            
+            viewModel.GetHeroes().ForEach(x => heroWrapPanel.Children.Add(new HeroControl(x)));
         }
 
         private void AddPersBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            //new AddFighter().Show();
+            new AddFighter().Show();
         }
 
         private void Player1Btn_Click(object sender, RoutedEventArgs e)
@@ -55,7 +57,7 @@ namespace BitchFighting
         private void Player2Btn_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            //new FightWindow().Show();
+            new GameWindow().Show();
         }
     }
 }

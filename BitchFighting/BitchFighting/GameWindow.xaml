@@ -9,8 +9,8 @@
     <Grid>
         <Image Name="LeftHero" HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="200"/>
         <Image Name="RightHero" HorizontalAlignment="Left" Height="150" Margin="242,10,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button Name="LeftAttack" Content="Атака" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="200" Height="35"/>
-        <Button Name="RightAttack" Content="Атака" HorizontalAlignment="Left" Margin="242,165,0,0" VerticalAlignment="Top" Width="200" Height="35"/>
+        <Button Name="LeftAttack" Content="Атака 1" Click="LeftAttack_Click" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="200" Height="35"/>
+        <Button Name="RightAttack" Content="Атака 2" Click="RightAttack_Click" IsEnabled="False" HorizontalAlignment="Left" Margin="242,165,0,0" VerticalAlignment="Top" Width="200" Height="35"/>
         <ListBox Name="LogBox" HorizontalAlignment="Left" Height="191" Margin="10,218,0,0" VerticalAlignment="Top" Width="432"/>
     </Grid>
 </Window>

@@ -29,5 +29,21 @@ namespace BitchFighting
             viewModel = new GameWindowViewModel(firstPlayer, secondPlayer);
             DataContext = viewModel;
         }
+
+        private void LeftAttack_Click(object sender, RoutedEventArgs e)
+        {
+            LogBox.Items.Add(viewModel.Attack());
+            LogBox.Items.Add(viewModel.CheckHP(this));
+            LeftAttack.IsEnabled = false;
+            RightAttack.IsEnabled = true;
+        }
+
+        private void RightAttack_Click(object sender, RoutedEventArgs e)
+        {
+            LogBox.Items.Add(viewModel.Attack());
+            LogBox.Items.Add(viewModel.CheckHP(this));
+            LeftAttack.IsEnabled = true;
+            RightAttack.IsEnabled = false;
+        }
     }
 }

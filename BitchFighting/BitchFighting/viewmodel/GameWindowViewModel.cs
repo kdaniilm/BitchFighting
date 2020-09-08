@@ -1,12 +1,13 @@
 ﻿using BitchFighting.model;
 using System;
+using System.Windows;
 
 namespace BitchFighting.viewmodel
 {
     class GameWindowViewModel
     {
         Hero firstPlayer, secondPlayer;
-        bool firstPlayer_isAttack, secondPlayer_isAttack;
+        bool firstPlayer_isAttack = true, secondPlayer_isAttack;
 
         public GameWindowViewModel(Hero firstPlayer, Hero secondPlayer)
         {
@@ -39,7 +40,7 @@ namespace BitchFighting.viewmodel
 
                 if (powerAttack > 0)
                 {
-                    secondPlayer.Hp -= powerAttack;
+                    firstPlayer.Hp -= powerAttack;
                     log = $"{DateTime.Now.ToShortTimeString()}\tПервый персонаж получил {powerAttack} урона, у него осталось {firstPlayer.Hp} здоровья!";
                 }
                 else log = $"{DateTime.Now.ToShortTimeString()}\tБроня первого персонажа сдержала весь удар.";
@@ -51,17 +52,23 @@ namespace BitchFighting.viewmodel
             return log;
         }
 
-        public string CheckHP()
+        public string CheckHP(GameWindow parentWindow)
         {
             string log = null;
 
             if(firstPlayer.Hp <= 0)
             {
                 log = $"{DateTime.Now.ToShortTimeString()}\tПервый персонаж пал, победа на стороне второго персонажа!";
+                MessageBox.Show("Первый персонаж пал, победа на стороне второго персонажа!");
+                new MainWindow().Show();
+                parentWindow.Close();
             }
             else if(secondPlayer.Hp <= 0)
             {
                 log = $"{DateTime.Now.ToShortTimeString()}\tВторой персонаж пал, победа на стороне первого персонажа!";
+                MessageBox.Show("Первый персонаж пал, победа на стороне второго персонажа!");
+                new MainWindow().Show();
+                parentWindow.Close();
             }
 
             return log;

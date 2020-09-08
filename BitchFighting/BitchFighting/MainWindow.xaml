@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BitchFighting"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Bitch fight" Height="400" Width="500">
     <Grid>
-        
+        <Button Name="AddPersBtn" Margin="432,10,10,309" Width="50" Height="50" Content="+" FontSize="20" VerticalContentAlignment="Center" Click="AddPersBtn_Click"/>
+        <WrapPanel Margin="10 80 10 80" Name="FighterWP"></WrapPanel>
+        <Button Name="Player1Btn" Width="200" Height="50" Margin="10,309,282,10" Content="Player 1" FontSize="20" Click="Player1Btn_Click"/>
+        <Button Name="Player2Btn" Width="200" Height="50" Margin="282,309,10,10" Content="Player 2" FontSize="20" Click="Player2Btn_Click" IsEnabled="False"/>
     </Grid>
 </Window>

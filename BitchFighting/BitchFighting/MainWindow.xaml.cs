@@ -42,7 +42,7 @@ namespace BitchFighting
         private void AddPersBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            //new AddFighter().Show();
+            new AddFighter().Show();
         }
 
         private void Player1Btn_Click(object sender, RoutedEventArgs e)
@@ -55,7 +55,7 @@ namespace BitchFighting
         private void Player2Btn_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            //new FightWindow().Show();
+            new GameWindow().Show();
         }
     }
 }

@@ -78,11 +78,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddFighter.xaml.cs">
+      <DependentUpon>AddFighter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="viewmodel\AddFighterViewModel.cs" />
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="viewmodel\GameWindowViewModel.cs" />
     <Compile Include="viewmodel\MainWindowViewModel.cs" />
+    <Page Include="AddFighter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

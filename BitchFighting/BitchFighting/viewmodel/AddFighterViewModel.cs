@@ -26,6 +26,7 @@ namespace BitchFighting.viewmodel
         public void AddHero(Hero hero)
         {
             _heroes.Add(hero);
+            DatabaseControl.getInstance().Set(_heroes);
 
         }
     }

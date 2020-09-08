@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BitchFighting"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800">
+        Title="GameWindow" Height="450" Width="462.5">
     <Grid>
-        
+        <Image Name="LeftHero" HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="200"/>
+        <Image Name="RightHero" HorizontalAlignment="Left" Height="150" Margin="242,10,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Name="LeftAttack" Content="Атака" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="200" Height="35"/>
+        <Button Name="RightAttack" Content="Атака" HorizontalAlignment="Left" Margin="242,165,0,0" VerticalAlignment="Top" Width="200" Height="35"/>
+        <ListBox Name="LogBox" HorizontalAlignment="Left" Height="191" Margin="10,218,0,0" VerticalAlignment="Top" Width="432"/>
     </Grid>
 </Window>

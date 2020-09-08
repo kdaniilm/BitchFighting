@@ -14,20 +14,24 @@ namespace BitchFighting.viewmodel
             this.secondPlayer = secondPlayer;
         }
 
-        public void Attack()
+        public string Attack()
         {
             int powerAttack = 0;
+            string log = null;
 
             if (firstPlayer_isAttack)
             {
                 powerAttack = firstPlayer.Attack - new Random().Next(0, secondPlayer.Defense);
-                
-                if(powerAttack > 0)
+
+                if (powerAttack > 0)
                 {
                     secondPlayer.Hp -= powerAttack;
+                    log = $"{DateTime.Now.ToShortTimeString()}\tВторой персонаж получил {powerAttack} урона, у него осталось {secondPlayer.Hp} здоровья!";
                 }
+                else log = $"{DateTime.Now.ToShortTimeString()}\tБроня второго персонажа сдержала весь удар.";
 
                 firstPlayer_isAttack = false;
+                secondPlayer_isAttack = true;
             }
             else if(secondPlayer_isAttack)
             {
@@ -36,10 +40,31 @@ namespace BitchFighting.viewmodel
                 if (powerAttack > 0)
                 {
                     secondPlayer.Hp -= powerAttack;
+                    log = $"{DateTime.Now.ToShortTimeString()}\tПервый персонаж получил {powerAttack} урона, у него осталось {firstPlayer.Hp} здоровья!";
                 }
-                
+                else log = $"{DateTime.Now.ToShortTimeString()}\tБроня первого персонажа сдержала весь удар.";
+
                 secondPlayer_isAttack = false;
+                firstPlayer_isAttack = true;
             }
+
+            return log;
+        }
+
+        public string CheckHP()
+        {
+            string log = null;
+
+            if(firstPlayer.Hp <= 0)
+            {
+                log = $"{DateTime.Now.ToShortTimeString()}\tПервый персонаж пал, победа на стороне второго персонажа!";
+            }
+            else if(secondPlayer.Hp <= 0)
+            {
+                log = $"{DateTime.Now.ToShortTimeString()}\tВторой персонаж пал, победа на стороне первого персонажа!";
+            }
+
+            return log;
         }
     }
 }

@@ -50,8 +50,7 @@ namespace BitchFighting
                 viewModel.AddHero(new model.Hero() { Attack = Convert.ToInt32(AttackTb.Text), Defense = Convert.ToInt32(DefenceTb.Text),
                     Description = DescriptionTb.Text, Hp = Convert.ToInt32(HPTb.Text), Name = NameTb.Text, ImageUrl = ImageUrlTb.Text, Id = rand.Next(0,25991295)});
 
-                this.Hide();
-                new MainWindow().ShowDialog();
+                this.Close();
             }
             else
             {

@@ -26,6 +26,6 @@
         </ScrollViewer>
    
         <Button Name="Player1Btn" Grid.Column="0" Grid.Row="2" Width="200" Height="50" Background="#222328" Foreground="#fff"  Content="Player 1" FontSize="20" Click="Player1Btn_Click"/>
-        <Button Name="Player2Btn" Grid.Column="1" Grid.Row="2" Width="200" Height="50" Background="#222328" Foreground="#fff" Content="Player 2" FontSize="20" Click="Player2Btn_Click"/>
+        <Button Name="Player2Btn" Grid.Column="1" Grid.Row="2" Width="200" Height="50" IsEnabled="False" Background="#222328" Foreground="#fff" Content="Player 2" FontSize="20" Click="Player1Btn_Click"/>
     </Grid>
 </Window>

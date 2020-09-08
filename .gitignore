@@ -52,5 +52,14 @@ BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/db.lock
 BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide
 BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide-shm
 BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide-wal
+<<<<<<< Updated upstream
 BitchFighting/BitchFighting/obj/Debug/GameWindow.baml
 >>>>>>> Stashed changes
+=======
+BitchFighting/BitchFighting/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+BitchFighting/BitchFighting/obj/Debug/GameWindow.baml
+BitchFighting/BitchFighting/obj/Debug/GameWindow.g.cs
+>>>>>>> Stashed changes
+BitchFighting/.vs/BitchFighting/v16/.suo
+BitchFighting/BitchFighting/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+BitchFighting/BitchFighting/obj/Debug/GameWindow.g.cs

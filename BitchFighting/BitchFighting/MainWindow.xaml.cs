@@ -1,4 +1,5 @@
 ﻿using BitchFighting.controls;
+using BitchFighting.model;
 using BitchFighting.viewmodel;
 using System;
 using System.Collections.Generic;
@@ -20,9 +21,9 @@ namespace BitchFighting
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, OnClickHeroListener
     {
-        private MainWindowViewModel viewModel;
+        public MainWindowViewModel viewModel;
 
         public MainWindow()
         {
@@ -31,33 +32,79 @@ namespace BitchFighting
             viewModel = new MainWindowViewModel();
             DataContext = viewModel;
 
-         
 
+      
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
-            viewModel.GetHeroes().ForEach(x => heroWrapPanel.Children.Add(new HeroControl(x)));
+
+            ResetHeroesList();
         }
 
         private void AddPersBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new AddFighter().Show();
+            new AddFighter().ShowDialog();
+            ResetHeroesList();
         }
 
         private void Player1Btn_Click(object sender, RoutedEventArgs e)
         {
+            if(viewModel.isPlayerReady())
+            {
+                bool result = viewModel.ApplyHero();
+                if (result)
+                {
 
-            Player1Btn.IsEnabled = false;
-            Player2Btn.IsEnabled = true;
+                    new GameWindow(viewModel.GetP1(), viewModel.GetP2()).Show();
+                    this.Close();
+                }
+                else
+                {
+                    Player1Btn.IsEnabled = false;
+                    Player2Btn.IsEnabled = true;
+                }
+            }
+
+
         }
 
         private void Player2Btn_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new GameWindow().Show();
+
+        }
+
+        private void ResetHeroesList()
+        {
+            heroWrapPanel.Children.Clear();
+            viewModel.GetHeroes().ForEach(x => heroWrapPanel.Children.Add(new HeroControl(x, this, this)));
+        }
+
+        public void ChangeHero(Hero hero)
+        {
+            viewModel.ChooseHero(hero);
+        }
+
+        public void UpdateHeroes(HeroControl heroControl)
+        {
+            foreach(var element in heroWrapPanel.Children)
+            {
+                if((element as HeroControl) != heroControl && viewModel.CheckHero((element as HeroControl).GetHero()))
+                    (element as HeroControl).ResetExcretion();
+
+            }
+        }
+
+        public bool CheckHero(Hero hero)
+        {
+            return this.viewModel.CheckHero(hero);
         }
     }
+        public interface OnClickHeroListener
+        {
+            void ChangeHero(Hero hero);
+
+            void UpdateHeroes(HeroControl heroControl);
+            bool CheckHero(Hero hero);
+        }
 }

@@ -95,6 +95,7 @@
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="viewmodel\AddFighterViewModel.cs" />
     <Compile Include="viewmodel\GameWindowViewModel.cs" />
     <Compile Include="viewmodel\MainWindowViewModel.cs" />
     <Page Include="AddFighter.xaml">

@@ -1,4 +1,5 @@
-﻿using BitchFighting.viewmodel;
+
+using BitchFighting.viewmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace BitchFighting
     /// </summary>
     public partial class AddFighter : Window
     {
+
         private AddFighterViewModel viewModel;
         Random rand = new Random();
 
@@ -28,7 +30,7 @@ namespace BitchFighting
             InitializeComponent();
             viewModel = new AddFighterViewModel();
             DataContext = viewModel;
-        }
+
 
         private void PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -42,7 +44,9 @@ namespace BitchFighting
         {
             if (NameTb.Text.Length > 0 && DescriptionTb.Text.Length > 0 && HPTb.Text.Length > 0 && DefenceTb.Text.Length > 0 && AttackTb.Text.Length > 0 && ImageUrlTb.Text.Length > 0)
             {
+
                 viewModel.AddHero(new model.Hero() { Attack = Convert.ToInt32(AttackTb), Defense = Convert.ToInt32(DefenceTb.Text), Description = DescriptionTb.Text, Hp = Convert.ToInt32(HPTb.Text), Name = NameTb.Text, ImageUrl = null, Id = rand.Next(0,25991295)});
+
                 this.Hide();
                 new MainWindow().ShowDialog();
             }

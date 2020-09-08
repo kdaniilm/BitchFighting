@@ -20,8 +20,6 @@ BitchFighting/BitchFighting/obj/Debug/App.g.i.cs
 BitchFighting/BitchFighting/obj/Debug/BitchFighting.csproj.CoreCompileInputs.cache
 BitchFighting/BitchFighting/obj/Debug/MainWindow.g.cs
 BitchFighting/BitchFighting/obj/Debug/MainWindow.g.i.cs
-<<<<<<< Updated upstream
-=======
 BitchFighting/BitchFighting/obj/Debug/AddFighter.baml
 BitchFighting/BitchFighting/obj/Debug/AddFighter.g.cs
 BitchFighting/BitchFighting/obj/Debug/AddFighter.g.i.cs
@@ -53,4 +51,3 @@ BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide
 BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide-shm
 BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide-wal
 BitchFighting/BitchFighting/obj/Debug/GameWindow.baml
->>>>>>> Stashed changes

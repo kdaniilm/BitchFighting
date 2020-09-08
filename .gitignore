@@ -51,6 +51,11 @@ BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide
 BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide-shm
 BitchFighting/.vs/BitchFighting/v16/Server/sqlite3/storage.ide-wal
 BitchFighting/BitchFighting/obj/Debug/GameWindow.baml
+BitchFighting/BitchFighting/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+BitchFighting/BitchFighting/obj/Debug/GameWindow.baml
+BitchFighting/BitchFighting/obj/Debug/GameWindow.g.cs
+BitchFighting/BitchFighting/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+BitchFighting/BitchFighting/obj/Debug/GameWindow.g.cs
 BitchFighting/BitchFighting/bin/Debug/MaterialDesignColors.dll
 BitchFighting/BitchFighting/bin/Debug/MaterialDesignColors.pdb
 BitchFighting/BitchFighting/bin/Debug/MaterialDesignThemes.Wpf.dll
@@ -68,3 +73,4 @@ BitchFighting/BitchFighting/obj/Debug/GameWindow.g.cs
 BitchFighting/BitchFighting/obj/Debug/GameWindow.g.i.cs
 BitchFighting/BitchFighting/obj/Debug/GeneratedInternalTypeHelper.g.cs
 BitchFighting/BitchFighting/obj/Debug/GeneratedInternalTypeHelper.g.i.cs
+

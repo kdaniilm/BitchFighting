@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BitchFighting.model
 {
-    class Hero
+    public class Hero
     {
         public long Id { get; set; }
         public string Name { get; set; }

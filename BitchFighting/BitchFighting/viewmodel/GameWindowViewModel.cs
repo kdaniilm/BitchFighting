@@ -6,7 +6,7 @@ namespace BitchFighting.viewmodel
 {
     class GameWindowViewModel
     {
-        Hero firstPlayer, secondPlayer;
+        public Hero firstPlayer, secondPlayer;
         bool firstPlayer_isAttack = true, secondPlayer_isAttack;
 
         public GameWindowViewModel(Hero firstPlayer, Hero secondPlayer)
@@ -27,9 +27,9 @@ namespace BitchFighting.viewmodel
                 if (powerAttack > 0)
                 {
                     secondPlayer.Hp -= powerAttack;
-                    log = $"{DateTime.Now.ToShortTimeString()}\tВторой персонаж получил {powerAttack} урона, у него осталось {secondPlayer.Hp} здоровья!";
+                    log = $"{DateTime.Now.ToShortTimeString()}  |  Второй персонаж получил {powerAttack} урона, у него осталось {secondPlayer.Hp} здоровья!";
                 }
-                else log = $"{DateTime.Now.ToShortTimeString()}\tБроня второго персонажа сдержала весь удар.";
+                else log = $"{DateTime.Now.ToShortTimeString()}  |  Броня второго персонажа сдержала весь удар.";
 
                 firstPlayer_isAttack = false;
                 secondPlayer_isAttack = true;
@@ -41,9 +41,9 @@ namespace BitchFighting.viewmodel
                 if (powerAttack > 0)
                 {
                     firstPlayer.Hp -= powerAttack;
-                    log = $"{DateTime.Now.ToShortTimeString()}\tПервый персонаж получил {powerAttack} урона, у него осталось {firstPlayer.Hp} здоровья!";
+                    log = $"{DateTime.Now.ToShortTimeString()}  |  Первый персонаж получил {powerAttack} урона, у него осталось {firstPlayer.Hp} здоровья!";
                 }
-                else log = $"{DateTime.Now.ToShortTimeString()}\tБроня первого персонажа сдержала весь удар.";
+                else log = $"{DateTime.Now.ToShortTimeString()}  |  Броня первого персонажа сдержала весь удар.";
 
                 secondPlayer_isAttack = false;
                 firstPlayer_isAttack = true;

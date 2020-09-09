@@ -28,12 +28,39 @@ namespace BitchFighting
             InitializeComponent();
             viewModel = new GameWindowViewModel(firstPlayer, secondPlayer);
             DataContext = viewModel;
+            hp1.Value = hp1.Maximum = firstPlayer.Hp;
+            hp2.Value = hp2.Maximum = secondPlayer.Hp;
+            try
+            {
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(firstPlayer.ImageUrl, UriKind.Absolute);
+                bitmap.EndInit();
+
+                LeftHero.Source = bitmap;
+            }
+            catch { }
+
+            try
+            {
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(secondPlayer.ImageUrl, UriKind.Absolute);
+                bitmap.EndInit();
+
+                RightHero.Source = bitmap;
+            }
+            catch { }
         }
 
         private void LeftAttack_Click(object sender, RoutedEventArgs e)
         {
             LogBox.Items.Add(viewModel.Attack());
-            LogBox.Items.Add(viewModel.CheckHP(this));
+            string tmp = viewModel.CheckHP(this);
+            if(tmp != null)
+                LogBox.Items.Add(tmp);
+            LogBox.ScrollIntoView(LogBox.Items[LogBox.Items.Count - 1]);
+            hp2.Value = viewModel.secondPlayer.Hp;
             LeftAttack.IsEnabled = false;
             RightAttack.IsEnabled = true;
         }
@@ -41,7 +68,11 @@ namespace BitchFighting
         private void RightAttack_Click(object sender, RoutedEventArgs e)
         {
             LogBox.Items.Add(viewModel.Attack());
-            LogBox.Items.Add(viewModel.CheckHP(this));
+            string tmp = viewModel.CheckHP(this);
+            if (tmp != null)
+                LogBox.Items.Add(tmp);
+            LogBox.ScrollIntoView(LogBox.Items[LogBox.Items.Count - 1]);
+            hp1.Value = viewModel.firstPlayer.Hp;
             LeftAttack.IsEnabled = true;
             RightAttack.IsEnabled = false;
         }
